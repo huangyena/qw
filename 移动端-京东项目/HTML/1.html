@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<script src = "../js/swiper.min.js"></script>
+	<link rel="stylesheet" href="../css/swiper.min.css">
+	<style>
+		.color
+	</style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img data-src="../images/2.jpg"" class="swiper-lazy">
+            <div class="swiper-lazy-preloader">1</div>
+        </div>
+        <div class="swiper-slide">
+            <img data-src="../images/1.jpg" class="swiper-lazy">
+            <div class="swiper-lazy-preloader">2</div>
+        </div>
+        <div class="swiper-slide">
+            <div data-background="../images/3.jpg"" class="swiper-lazy">slide3</div>
+        </div>
+    </div>
+</div> 
+<script> 
+var mySwiper = new Swiper('.swiper-container',{
+lazyLoading : true,
+})
+</script>
+</body>
+</html>

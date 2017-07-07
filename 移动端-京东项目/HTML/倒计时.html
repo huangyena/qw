@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定时器</title>
+	<script src = "../js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<h1>距离放学时间还有：
+		<span id = "day">0:</span>
+		<span id = "hour">0:</span>
+		<span id = "minutes">0:</span>
+		<span id = "second">0:</span>
+	</h1>
+	<!-- <input type="button" value="开始倒计时" onclick="fun()" id = "a"> -->
+	<script>
+	
+		setInterval(function(){
+			var time = new Date();//获取当前时间
+			// console.log(time);
+			var time2 = new Date(2017,7,5,23,00);//获取7月8号晚上8:30的时间
+			// console.log(time2);
+			var sun = time2.getTime()-time.getTime();//获取两个时间差
+			// console.log(sun);
+			if(sun>0){
+				var second = parseInt(sun/1000%60);
+				// console.log(second);
+				var minute = parseInt(sun/1000/60%60);
+				// console.log(minute);
+				var hours = parseInt(sun/1000/60/60%24);
+				// console.log(hours);
+				var day = parseInt(sun/1000/60/60/24);
+				// console.log(day);
+				var days =$("#day");
+				// console.log(days);
+				days.html(day+":");
+				var hour = $("#hour");
+				var minutes  = $("#minutes");
+				var seconds = $("#second");
+				hour.html(hours+":");
+				minutes.html(minute+":");
+				seconds.html(second);
+			} 
+		})
+		// var aa ;
+		// var a = $("#a");
+		// function fun(){
+		// 	if(!aa){
+		// 		aa = setInterval(times,1000);
+		// 		a.val("开始倒计时");
+		// 	}else if (aa){
+		// 		clearInterval(aa);
+		// 		aa = null;
+		// 		a.val("停止倒计时");
+		// 	}
+		// }
+	</script>
+	
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/swiper.min.css">
+			<script src = "../js/swiper.min.js"></script>
+	<title>京东首页</title>
+</head>
+<body>
+	<div class="jd_home_page">
+		<header class="jd_header">
+		<!-- 在header内部加入一个包裹着内容的div，可以避免使用header导致的头部充满页面 -->
+			<div class="jd_header_div">
+				<a href="" class="jd_logo"></a>
+				<form action="">
+					<span class="jd_search"></span>
+					<input type="text" placeholder="请输入商品名">
+				</form>
+				<a href="" class="jd_login">登录</a>
+			</div>
+		</header>
+		<div class="jd_pictures swiper-container" >
+			<ul class="image_box swiper-wrapper">
+				<li class="swiper-slide"><a href="#" ><img src="../images/10.jpg" alt="" id = "img"></a></li>
+				<li class="swiper-slide"><a href="#"><img src="../images/4.jpg" alt="" id = "img"></a></li>
+				<li class="swiper-slide"><a href="#"><img src="../images/5.jpg" alt="" id = "img"></a></li>
+				<li class="swiper-slide"><a href="#" ><img src="../images/6.jpg" alt="" id = "img"></a></li>
+				<li class="swiper-slide"><a href="#"><img src="../images/7.jpg" alt="" id = "img"></a></li>
+				<li class="swiper-slide"><a href="#"><img src="../images/8.jpg" alt="" id = "img"></a></li>
+				<li class="swiper-slide"><a href="#"><img src="../images/9.jpg" alt="" id = "img"></a></li>
+				<li class="swiper-slide"><a href="#"><img src="../images/10.jpg" alt="" id = "img"></a></li>
+				<li class="swiper-slide"><a href="#"><img src="../images/6.jpg" alt="" id = "img"></a></li>
+				<li class="swiper-slide"><a href="#"><img src="../images/4.jpg" alt="" id = "img"></a></li>
+			</ul>
+			<!-- 圆点 -->
+			<!-- <ul class="point swiper-container">
+				<li class="circle swiper-slide"></li>
+				<li class="swiper-slide"></li>
+				<li class="swiper-slide"></li>
+				<li class="swiper-slide"></li>
+				<li class="swiper-slide"></li>
+				<li class="swiper-slide"></li>
+				<li class="swiper-slide"></li>
+				<li class="swiper-slide"></li>
+				<li class="swiper-slide"></li>
+				<li class="swiper-slide"></li>
+			</ul> -->
+			<div class="swiper-pagination"></div>
+			<!-- <div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div> -->
+		</div>
+		  <script>
+		    var swiper = new Swiper('.jd_pictures', {
+		        pagination: '.swiper-pagination',
+		        // nextButton: '.swiper-button-next',
+		        // prevButton: '.swiper-button-prev',
+		        paginationClickable: true,
+		        spaceBetween: 30,
+		        centeredSlides: true,
+		        autoplay: 2000,
+		        autoplayDisableOnInteraction: false
+    });
+    </script>
+		<!-- 导航栏-分类查询 -->
+		<div class="jd_nav">
+			<div class="jd_nav_first">
+				<div>
+					<img src="../images/icon.jpg" alt="">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="../images/icon.jpg" alt="">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="../images/icon.jpg" alt="">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="../images/icon.jpg" alt="">
+					<p>分类查询</p>
+				</div>
+			</div>
+			<div class="jd_nav_second">
+				<div>
+					<img src="../images/icon.jpg" alt="">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="../images/icon.jpg" alt="">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="../images/icon.jpg" alt="">
+					<p>分类查询</p>
+				</div>
+				<div>
+					<img src="../images/icon.jpg" alt="">
+					<p>分类查询</p>
+				</div>
+			</div>
+		</div>
+		<!-- 页面的内容 -->
+		<div class="jd_content">
+			<!-- 掌上秒杀 -->
+			<section class="jd_content_seckill">
+				<div class="jd_content_seckill_border jd_content_seckill_wire" >
+					<div class = "jd_remove_left">
+						<span class="jd_content_picture"></span>
+						<span class="jd_content_finger">掌上秒杀</span>
+						<div class = "jd_content_time">
+							<span id = "h">0</span>
+							<span id = "hour">0</span>
+							<span class="colon">:</span>
+							<span id = "m">0</span>
+							<span id = "minutes">0</span>
+							<span class="colon">:</span>
+							<span id = "s">0</span>
+							<span id = "second">0</span>
+						</div>
+					</div>
+					<div  class = "jd_remove_right">更多>></div>
+				</div>
+					<script>
+	
+						setInterval(function times(){
+							var time = new Date();//获取当前时间
+							// console.log(time);
+							var time2 = new Date(2017,7,5,24,00);//获取7月8号晚上8:30的时间
+							// console.log(time2);
+							var sun = time2.getTime()-time.getTime();//获取两个时间差
+							if(sun>0){
+								var second = parseInt(sun/1000%60);
+								// console.log(second);
+								var minute = parseInt(sun/1000/60%60);
+								// console.log(minute);
+								var hours = parseInt(sun/1000/60/60%24);
+								var h = parseInt(hours/10%10);
+								// console.log(h);
+								// console.log(hours);
+								var hf = parseInt(hours%10);
+								var m = parseInt(minute/10%10);
+								var mf = parseFloat(minute%10);
+								// console.log(m);
+								var s = parseInt(second/10%10);
+								var sf = parseFloat(second%10);
+								var mm = $("#m");
+								var hh = $("#h");
+								var ss = $("#s");
+								var hour = $("#hour");
+								var minutes  = $("#minutes");
+								var seconds = $("#second");
+								mm.html(m);
+								hour.html(hf);
+								hh.html(h);
+								ss.html(s);
+								minutes.html(mf);
+								seconds.html(sf);
+					} 
+				})
+				</script>
+				<!-- 秒杀图片及价格 -->
+				<div class="jd_content_product">
+					<ul>
+						<li>
+							<a href="">
+								<img src="../images/p1.jpg" alt="">
+							</a>
+							<p>&yen;10</p>
+							<p>&yen;100</p>
+						</li>
+						<li>
+							<a href="">
+								<img src="../images/p1.jpg" alt="">
+							</a>
+							<p>&yen;10</p>
+							<p>&yen;100</p>
+						</li>
+						<li>
+							<a href="">
+								<img src="../images/p1.jpg" alt="">
+							</a>
+							<p>&yen;10</p>
+							<p>&yen;100</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+		<section class="jd_content_seckill">
+				<div class="jd_content_seckill_border">京东超市</div>
+				<div class=" clear_float">
+					<a href="" class="width_half remove_left border_right"><img src="../images/pf1.jpg" alt=""></a>
+					<a href="" class="width_half remove_right border_buttom"><img src="../images/pf2.jpg" alt=""></a>
+					<a href="" class="width_half remove_right"><img src="../images/pf3.jpg" alt=""></a>
+				</div>
+			</section>
+			<section class="jd_content_seckill">
+				<div class="jd_content_seckill_border">京东超市</div>
+				<div class=" clear_float" >
+					<a href="" class="remove_right width_half border_left"><img src="../images/pf1.jpg" alt=""></a>
+					<a href="" class="remove_left width_half border_buttom"><img src="../images/pf2.jpg" alt=""></a>
+					<a href="" class="remove_left width_half"><img src="../images/pf3.jpg" alt=""></a>
+				</div>
+			</section>
+			<section class="jd_content_seckill">
+				<div class="jd_content_seckill_border">京东超市</div>
+				<div class=" clear_float">
+					<a href="" class="width_half remove_left border_right"><img src="../images/pf1.jpg" alt=""></a>
+					<a href="" class="width_half remove_right border_buttom"><img src="../images/pf2.jpg" alt=""></a>
+					<a href="" class="width_half remove_right"><img src="../images/pf3.jpg" alt=""></a>
+				</div>
+			</section>
+		</div>
+	</div>
+	<script>
+		var mySwiper = new Swiper('.jd_pictures', {
+			autoplay: 2000,//可选选项，自动滑动
+			pagination:"point",
+		})
+		// var index = 0;
+		// setInterval(function(){
+		// 	if(index == 9){
+		// 		index = 0;
+		// 	}
+		// 	index++;
+		// 	$(".point li").removeClass("circle");
+		// 	$($(".point li")[index]).addClass("circle");
+		// 	console.log(index);
+		// 	console.log($(".point li"));
+		// },2100);
+
+	</script>
+	<script src = "../js/jquery-3.1.1.min.js"></script>
+	<!-- <script src = "../js/index.js"></script> -->
+
+</body>
+</html>
